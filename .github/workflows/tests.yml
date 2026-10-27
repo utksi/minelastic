@@ -1,0 +1,31 @@
+name: tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  pytest:
+    # Python 3.9 is not built for ubuntu-latest (26.04); its last builds are for 22.04 and 24.04
+    runs-on: ${{ matrix.python-version == '3.9' && 'ubuntu-24.04' || 'ubuntu-latest' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install ".[test]"
+      - run: pytest -q tests
+  examples:
+    # every code block of the documentation, including the example scripts that take minutes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ".[test]"
+      - run: python examples/emt_cu.py
+      - run: MINELASTIC_DOCS_SLOW=1 pytest -q tests/test_docs.py

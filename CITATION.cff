@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use minelastic, please cite the paper below."
+title: "minelastic: elastic constants from minimal uncoupled stress-strain calculations"
+type: software
+version: 0.1.0
+date-released: "2026-10-22"
+license: MIT
+repository-code: "https://github.com/utksi/minelastic"
+url: "https://utksi.github.io/minelastic/"
+keywords:
+  - elastic constants
+  - stress-strain
+  - density functional theory
+  - piezoelectricity
+  - VASP
+  - Quantum ESPRESSO
+  - ASE
+authors:
+  - family-names: Singh
+    given-names: Utkarsh
+    affiliation: "Department of Physics, Chemistry and Biology (IFM), Linköping University, Sweden"
+  - family-names: Simak
+    given-names: Sergei I.
+    affiliation: "Department of Physics, Chemistry and Biology (IFM), Linköping University, Sweden"
+preferred-citation:
+  type: article
+  title: "A General Algorithm for Minimal Uncoupled Stress--Strain Calculations of Elastic Constants"
+  authors:
+    - family-names: Simak
+      given-names: Sergei I.
+    - family-names: Singh
+      given-names: Utkarsh
+  journal: "arXiv preprint arXiv:2610.11733"
+  year: 2026
+  doi: "10.48550/arXiv.2610.11733"
+  url: "https://arxiv.org/abs/2610.11733"

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minelastic"
+version = "0.1.0"
+description = "Elastic constants from minimal uncoupled stress-strain calculations (VASP, Quantum ESPRESSO, ABINIT, FHI-aims, any ASE calculator)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Utkarsh Singh"}, {name = "Sergei I. Simak"}]
+keywords = ["elastic constants", "stress-strain", "density functional theory", "VASP", "Quantum ESPRESSO",
+            "ABINIT", "ASE", "piezoelectric", "materials science"]
+dependencies = ["numpy>=1.20", "spglib>=2.0", "ase>=3.22"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Topic :: Scientific/Engineering :: Chemistry",
+]
+
+[project.urls]
+Homepage = "https://github.com/utksi/minelastic"
+Documentation = "https://utksi.github.io/minelastic/"
+Source = "https://github.com/utksi/minelastic"
+Issues = "https://github.com/utksi/minelastic/issues"
+Paper = "https://arxiv.org/abs/2610.11733"
+
+[project.optional-dependencies]
+test = ["pytest"]
+docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.5", "mkdocstrings[python]>=0.26"]
+
+[project.scripts]
+minelastic = "minelastic.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

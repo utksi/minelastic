@@ -1,0 +1,16 @@
+# wurtzite AlN, PBE, PseudoDojo v0.4 standard norm-conserving pseudopotentials (Al.psp8, N.psp8)
+# the structure is read from POSCAR; set pp_dirpath to the directory with the pseudopotentials
+structure "poscar:POSCAR"
+pp_dirpath "./pseudo"
+pseudos "Al.psp8, N.psp8"
+ecut 48
+ngkpt 8 8 5
+nshiftk 1
+shiftk 0 0 0
+occopt 1
+nstep 100
+tolvrs 1.0d-18
+chksymbreak 0
+prtwf 0
+prtden 0
+prteig 0

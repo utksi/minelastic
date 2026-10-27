@@ -1,0 +1,44 @@
+minelastic 0.1.0: Fd-3m (227), cubic, 1 strain pattern(s), method 'uncoupled'
+  c11 =     156.50 GPa
+  c12 =      60.56 GPa
+  c44 =     102.57 GPa
+stiffness matrix (GPa, Voigt xx yy zz yz xz xy, working frame):
+     156.50     60.56     60.56      0.00      0.00      0.00
+      60.56    156.50     60.56      0.00      0.00      0.00
+      60.56     60.56    156.50      0.00      0.00      0.00
+       0.00      0.00      0.00    102.57      0.00      0.00
+       0.00      0.00      0.00      0.00    102.57      0.00
+       0.00      0.00      0.00      0.00      0.00    102.57
+Born stable: True (eigenvalues 95.9, 95.9, 102.6, 102.6, 102.6, 277.6)
+K_VRH = 92.54  G_VRH = 75.60  E = 178.26 GPa  nu = 0.179  A_U = 0.727
+ionic relaxation contribution to C (GPa):
+      -0.00     -0.00      0.00      0.00      0.00      0.00
+      -0.00     -0.00     -0.00     -0.00     -0.00     -0.00
+       0.00     -0.00     -0.00     -0.00      0.00     -0.00
+       0.00     -0.00     -0.00    -22.85      0.00      0.00
+       0.00     -0.00      0.00      0.00    -22.85      0.00
+       0.00     -0.00     -0.00      0.00      0.00    -22.85
+relaxed-ion stiffness matrix (GPa):
+     156.50     60.56     60.56      0.00      0.00      0.00
+      60.56    156.50     60.56     -0.00     -0.00     -0.00
+      60.56     60.56    156.50     -0.00      0.00     -0.00
+       0.00     -0.00     -0.00     79.72      0.00      0.00
+       0.00     -0.00      0.00      0.00     79.72      0.00
+       0.00     -0.00     -0.00      0.00      0.00     79.72
+relaxed ions: Born stable True (eigenvalues 79.7, 79.7, 79.7, 95.9, 95.9, 277.6)
+consistency (redundant stress components): largest |computed - fitted| = 0.00 GPa (pattern 1, xz)
+
+minelastic 0.1.0: Fd-3m (227), cubic, 6 strain pattern(s), method 'uncoupled'
+  c11 =     156.47 GPa
+  c12 =      60.53 GPa
+  c44 =     102.52 GPa
+stiffness matrix (GPa, Voigt xx yy zz yz xz xy, working frame):
+     156.47     60.53     60.53      0.00      0.00      0.00
+      60.53    156.47     60.53      0.00      0.00      0.00
+      60.53     60.53    156.47      0.00      0.00      0.00
+       0.00      0.00      0.00    102.52      0.00      0.00
+       0.00      0.00      0.00      0.00    102.52      0.00
+       0.00      0.00      0.00      0.00      0.00    102.52
+Born stable: True (eigenvalues 95.9, 95.9, 102.5, 102.5, 102.5, 277.5)
+K_VRH = 92.51  G_VRH = 75.58  E = 178.22 GPa  nu = 0.179  A_U = 0.726
+consistency (redundant stress components): largest |computed - fitted| = 0.00 GPa (pattern 4, zz)

@@ -1,0 +1,29 @@
+/* The wordmark (symbol and name) is the header logo; Material shows it from 76.25em on, so the separate site
+   name is hidden there. On narrower screens the logo is hidden by Material and the name stays. */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.7rem;
+  width: auto;
+}
+@media screen and (min-width: 76.25em) {
+  .md-header__title .md-header__topic:first-child {
+    visibility: hidden;
+  }
+}
+
+/* Long lines in code blocks wrap instead of scrolling; copying a block still gives the original lines. */
+.md-typeset pre > code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* The heading of the home page is the wordmark, centred. */
+.md-typeset h1.wordmark-title {
+  margin: 0.4rem 0 1.4rem;
+  text-align: center;
+  line-height: 1;
+}
+.md-typeset h1.wordmark-title img {
+  height: 2.1rem;
+  width: auto;
+}

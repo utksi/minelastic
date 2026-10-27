@@ -1,0 +1,129 @@
+site_name: minelastic
+site_description: Elastic, internal-strain and piezoelectric tensors from the fewest possible stress calculations, for any crystal symmetry and any DFT code
+site_url: https://utksi.github.io/minelastic/
+repo_url: https://github.com/utksi/minelastic
+repo_name: utksi/minelastic
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 Utkarsh Singh
+
+theme:
+  name: material
+  logo: assets/wordmark-dark.svg
+  favicon: assets/logo.svg
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - toc.follow
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: numpy
+            show_source: false
+            show_root_heading: true
+            show_root_full_path: false
+            show_signature_annotations: false
+            separate_signature: true
+            heading_level: 2
+            members_order: source
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/utksi/minelastic
+    - icon: fontawesome/solid/file-lines
+      link: https://arxiv.org/abs/2610.11733
+
+hooks:
+  - tools/mkdocs_hooks.py
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Get started:
+      - Installation: get-started/installation.md
+      - Your first elastic tensor: get-started/first-tensor.md
+      - First run with VASP: get-started/vasp.md
+      - First run with Quantum ESPRESSO: get-started/qe.md
+      - First run with ABINIT: get-started/abinit.md
+      - First run with CP2K: get-started/cp2k.md
+  - How-to guides:
+      - Tasks:
+          - Elastic constants in practice: how-to/elastic.md
+          - Relaxed-ion constants: how-to/relaxed-ions.md
+          - Internal strain and force constants: how-to/internal-strain.md
+          - Born charges and piezoelectricity: how-to/piezoelectricity.md
+          - Finite temperature: how-to/finite-temperature.md
+          - Magnetic materials: how-to/magnetic.md
+          - Your own workflow: how-to/own-workflow.md
+          - Troubleshooting: how-to/troubleshooting.md
+      - Codes:
+          - ASE calculators: codes/ase.md
+          - VASP: codes/vasp.md
+          - Quantum ESPRESSO: codes/qe.md
+          - ABINIT, FHI-aims and others: codes/other.md
+  - Theory:
+      - The method: theory/index.md
+      - Elastic constants: theory/elastic.md
+      - Relaxed ions: theory/relaxed-ions.md
+      - Internal strain and force constants: theory/internal-strain.md
+      - Piezoelectricity: theory/piezoelectricity.md
+      - Finite temperature: theory/finite-temperature.md
+      - Cost of the minimal sets: theory/cost.md
+  - Reference:
+      - Python API: reference/api.md
+      - Command line: reference/cli.md
+      - Conventions and units: reference/conventions.md
+      - Validation: reference/validation.md
+      - Citing: reference/citing.md
