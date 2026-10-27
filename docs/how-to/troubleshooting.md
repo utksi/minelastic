@@ -45,5 +45,5 @@ with it. Use `--frame input` to keep the input orientation.
 
 ## Can I combine cells from different codes or settings?
 
-No. All strained cells of a set must be computed with identical settings. The constants are differences of
-stresses, and systematic differences between cells do not cancel.
+No. All strained cells of a set must be computed with identical settings. The constants are estimated from
+stress differences, and systematic differences between cells do not cancel.

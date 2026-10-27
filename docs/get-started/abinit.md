@@ -60,11 +60,12 @@ threshold are tight.
 
 !!! info "Convergence"
 
-    Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
-    cutoff, the k-point mesh, the smearing and the convergence threshold than total energies are. The settings here are chosen to show the workflow; they are not the
-    result of a convergence study. Before using the constants in a publication, check that they change by
-    less than the accuracy you need when the cutoff (`ecut`) is raised and the k-point mesh (`ngkpt`) refined, and relax the reference structure with the final
-    settings.
+    Elastic constants are obtained from derivatives of the stress with respect to the strain, which are estimated
+    from stress differences of a few GPa. They are therefore much more sensitive to the cutoff, the k-point mesh,
+    the smearing and the convergence threshold than total energies are. The settings here are chosen to show the
+    workflow; they are not the result of a convergence study. Before using the constants in a publication, check
+    that they change by less than the accuracy you need when the cutoff (`ecut`) is raised and the k-point mesh
+    (`ngkpt`) refined, and relax the reference structure with the final settings.
 
 
 ## 2. Look at the strain set

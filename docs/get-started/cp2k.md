@@ -69,11 +69,12 @@ relax the lattice parameter with the same calculator first.
 
 !!! info "Convergence"
 
-    Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
-    density cutoff, the basis set, the supercell size (or k-point mesh) and the SCF threshold than total energies are. The settings here are chosen to show the workflow; they are not the
-    result of a convergence study. Before using the constants in a publication, check that they change by
-    less than the accuracy you need when the cutoff is raised and the basis and supercell are enlarged, and relax the reference structure with the final
-    settings.
+    Elastic constants are obtained from derivatives of the stress with respect to the strain, which are estimated
+    from stress differences of a few GPa. They are therefore much more sensitive to the density cutoff, the basis
+    set, the supercell size (or k-point mesh) and the SCF threshold than total energies are. The settings here
+    are chosen to show the workflow; they are not the result of a convergence study. Before using the constants
+    in a publication, check that they change by less than the accuracy you need when the cutoff is raised and the
+    basis and supercell are enlarged, and relax the reference structure with the final settings.
 
 
 `calculate` finds the symmetry (cubic, one strain pattern), builds every strained cell, computes its stress

@@ -53,11 +53,12 @@ structure was relaxed with these settings.
 
 !!! info "Convergence"
 
-    Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
-    cutoffs, the k-point mesh, the smearing and the convergence threshold than total energies are. The settings here are chosen to show the workflow; they are not the
-    result of a convergence study. Before using the constants in a publication, check that they change by
-    less than the accuracy you need when the cutoffs are raised and the k-point mesh refined, and relax the reference structure with the final
-    settings.
+    Elastic constants are obtained from derivatives of the stress with respect to the strain, which are estimated
+    from stress differences of a few GPa. They are therefore much more sensitive to the cutoffs, the k-point
+    mesh, the smearing and the convergence threshold than total energies are. The settings here are chosen to
+    show the workflow; they are not the result of a convergence study. Before using the constants in a
+    publication, check that they change by less than the accuracy you need when the cutoffs are raised and the
+    k-point mesh refined, and relax the reference structure with the final settings.
 
 
 ## 2. Look at the strain set

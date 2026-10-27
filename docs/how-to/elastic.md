@@ -20,8 +20,8 @@ template; a `KSPACING` in the INCAR is replaced by the explicit mesh of the refe
 
 !!! warning "One set of settings"
 
-    Never combine cells computed with different codes or settings. The constants are differences of
-    stresses, and a systematic difference between two cells does not cancel.
+    Never combine cells computed with different codes or settings. The constants are estimated from stress differences,
+    and a systematic difference between two cells does not cancel.
 
 ## Check the symmetry before running
 
