@@ -23,11 +23,18 @@ LWAVE = .FALSE.
 LCHARG = .FALSE.
 ```
 
-and the KPOINTS file asks for a Gamma-centred 8 x 8 x 5 mesh. The elastic constants are differences of
-stresses of a few GPa, so the settings are tighter than for a total-energy calculation: a plane-wave cutoff
-of 1.3 times the largest ENMAX of the POTCAR (520 eV for N), a tight electronic convergence and no
-real-space projection. The structure in the POSCAR was relaxed with the same settings, so that its residual
-stress is small.
+and the KPOINTS file asks for a Gamma-centred 8 x 8 x 5 mesh. The cutoff is 1.3 times the largest ENMAX of
+the POTCAR (520 eV for N), the electronic convergence is tight, real-space projection is off, and the
+structure in the POSCAR was relaxed with these settings.
+
+!!! info "Convergence"
+
+    Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
+    plane-wave cutoff, the k-point mesh, the smearing and the electronic convergence than total energies are. The settings here are chosen to show the workflow; they are not the
+    result of a convergence study. Before using the constants in a publication, check that they change by
+    less than the accuracy you need when the cutoff is raised and the k-point mesh refined, and relax the reference structure with the final
+    settings.
+
 
 ## 2. Look at the strain set
 
@@ -57,9 +64,12 @@ stretches it along z. The entry `s1 = 1 c11` means that the first stress compone
 $\sigma_{xx}$, equals $c_{11}$ times the strain. Every constant appears alone in at least one stress
 component, so each is read off directly.
 
-Each pattern is applied at the strains $-0.01$ and $+0.01$ (multipliers -1 and 1 of the step). By default
-minelastic also uses $\pm 0.02$, which makes the numerical derivative more accurate but doubles the number of
-calculations. `--stencil central` keeps the cheaper two-point derivative for this first run.
+!!! note "Two points per strain"
+
+    By default minelastic applies each pattern at $\pm 0.01$ and $\pm 0.02$, which makes the numerical
+    derivative more accurate but doubles the number of calculations. For this first run, `--stencil central`
+    keeps only $\pm 0.01$ (the multipliers -1 and 1 in the output above).
+
 
 ## 3. Write the inputs
 

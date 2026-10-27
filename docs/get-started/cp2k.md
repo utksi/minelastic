@@ -63,10 +63,18 @@ result = minelastic.calculate(si, calc, ionic=True, stencil="central")
 print(result.summary())
 ```
 
-The calculator uses PBE with GTH pseudopotentials and the DZVP-MOLOPT-SR-GTH basis, a density cutoff of
-500 Ry and a tight SCF threshold, because the elastic constants are differences of stresses of a few GPa.
-`stress_tensor=True` makes CP2K compute the stress. The lattice parameter should be relaxed with the same
-calculator first; this run uses $a$ = 5.468 Å.
+The calculator uses PBE with GTH pseudopotentials, the DZVP-MOLOPT-SR-GTH basis, a density cutoff of 500 Ry
+and a tight SCF threshold; `stress_tensor=True` makes CP2K compute the stress. This run uses $a$ = 5.468 Å;
+relax the lattice parameter with the same calculator first.
+
+!!! info "Convergence"
+
+    Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
+    density cutoff, the basis set, the supercell size (or k-point mesh) and the SCF threshold than total energies are. The settings here are chosen to show the workflow; they are not the
+    result of a convergence study. Before using the constants in a publication, check that they change by
+    less than the accuracy you need when the cutoff is raised and the basis and supercell are enlarged, and relax the reference structure with the final
+    settings.
+
 
 `calculate` finds the symmetry (cubic, one strain pattern), builds every strained cell, computes its stress
 with CP2K and returns the result. `ionic=True` adds cells in which one atom is displaced, which give the

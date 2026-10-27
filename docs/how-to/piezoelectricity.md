@@ -201,9 +201,11 @@ the whole tensor by symmetry. For this AlN example, e33 = -0.428 C/m$^2$, agains
 DFPT; [`examples/replay_vasp_aln.py`](own-workflow.md#bring-your-own-stresses) reproduces it from the stored
 stresses and dipoles.
 
-VASP evaluates the Berry phase only for the first ionic step. In a relaxation the dipole would belong to the
-unrelaxed structure, so minelastic refuses dipoles from relaxed-ion cells; the total tensor comes from
-`--ionic`, which needs single points only.
+!!! note "Berry phase and relaxations"
+
+    VASP evaluates the Berry phase only for the first ionic step. In a relaxation the dipole would belong to
+    the unrelaxed structure, so minelastic refuses dipoles from relaxed-ion cells; the total tensor comes from
+    `--ionic`, which needs single points only.
 
 ## With other codes
 

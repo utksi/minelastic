@@ -43,10 +43,22 @@ K_POINTS automatic
 ```
 
 It uses the PBE functional and the PAW potentials `Al.pbe-n-kjpaw_psl.1.0.0.UPF` and
-`N.pbe-n-kjpaw_psl.1.0.0.UPF` of pslibrary 1.0.0. Every calculation runs in a directory of its own, so set
-`pseudo_dir` to the absolute path of the directory with these files. The elastic constants are differences
-of stresses of a few GPa, so the cutoffs and the convergence threshold are tighter than for a total-energy
-calculation. The structure was relaxed with the same settings, so that its residual stress is small.
+`N.pbe-n-kjpaw_psl.1.0.0.UPF` of pslibrary 1.0.0, with tight cutoffs and convergence threshold; the
+structure was relaxed with these settings.
+
+!!! note "Pseudopotential path"
+
+    Every calculation runs in a directory of its own, so set `pseudo_dir` to the absolute path of the
+    directory with the pseudopotential files.
+
+!!! info "Convergence"
+
+    Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
+    cutoffs, the k-point mesh, the smearing and the convergence threshold than total energies are. The settings here are chosen to show the workflow; they are not the
+    result of a convergence study. Before using the constants in a publication, check that they change by
+    less than the accuracy you need when the cutoffs are raised and the k-point mesh refined, and relax the reference structure with the final
+    settings.
+
 
 ## 2. Look at the strain set
 
@@ -76,9 +88,12 @@ stretches it along z. The entry `s1 = 1 c11` means that the first stress compone
 $\sigma_{xx}$, equals $c_{11}$ times the strain. Every constant appears alone in at least one stress
 component, so each is read off directly.
 
-Each pattern is applied at the strains $-0.01$ and $+0.01$ (multipliers -1 and 1 of the step). By default
-minelastic also uses $\pm 0.02$, which makes the numerical derivative more accurate but doubles the number of
-calculations. `--stencil central` keeps the cheaper two-point derivative for this first run.
+!!! note "Two points per strain"
+
+    By default minelastic applies each pattern at $\pm 0.01$ and $\pm 0.02$, which makes the numerical
+    derivative more accurate but doubles the number of calculations. For this first run, `--stencil central`
+    keeps only $\pm 0.01$ (the multipliers -1 and 1 in the output above).
+
 
 ## 3. Write the inputs
 

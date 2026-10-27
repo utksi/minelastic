@@ -18,8 +18,10 @@ electronic structure tightly (`EDIFF` of 1E-8). `minelastic generate vasp` repor
 template does not meet ([VASP](../codes/vasp.md#the-incar)). All strained cells use the k-point mesh of the
 template; a `KSPACING` in the INCAR is replaced by the explicit mesh of the reference cell.
 
-Never combine cells computed with different codes or settings. The constants are differences of stresses,
-and a systematic difference between two cells does not cancel.
+!!! warning "One set of settings"
+
+    Never combine cells computed with different codes or settings. The constants are differences of
+    stresses, and a systematic difference between two cells does not cancel.
 
 ## Check the symmetry before running
 

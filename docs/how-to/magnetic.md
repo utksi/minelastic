@@ -55,8 +55,10 @@ then the operations that exchange them together with a spin flip are not used. A
 MnF2 then gets the orthorhombic set of 3 patterns instead of the tetragonal set of 2; the constants are the
 same, at the cost of more cells.
 
-With an ASE calculator, the moments of the structure must be those the calculator uses. EMT and MACE ignore
-them, and ASE's CP2K calculator has no per-atom moments.
+!!! warning "ASE calculators"
+
+    With an ASE calculator, the moments of the structure must be those the calculator uses. EMT and MACE
+    ignore them, and ASE's CP2K calculator has no per-atom moments.
 
 If the cell has to be rotated to its standard orientation, noncollinear inputs are refused, because the
 moment directions would have to be rotated too. Use `--frame input` (`frame="input"`) to keep the input

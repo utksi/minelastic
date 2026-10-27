@@ -68,8 +68,8 @@ def spelling():
 
 
 def prose(text):
-    """The prose of a markdown page: code blocks, inline code, maths, link targets, attribute lists and HTML
-    comments are replaced by blanks of the same line structure, so that line numbers are kept."""
+    """The prose of a markdown page: code blocks, inline code, maths, link targets, attribute lists, admonition
+    markers and HTML comments are replaced by blanks of the same line structure, so that line numbers are kept."""
     keep_lines = lambda m: "\n" * m.group(0).count("\n")                  # noqa: E731
     text = re.sub(r"(?ms)^(\s*)(```|~~~).*?^\1\2\s*$", keep_lines, text)
     text = re.sub(r"(?s)<!--.*?-->", keep_lines, text)
@@ -79,6 +79,7 @@ def prose(text):
     text = re.sub(r"\]\([^)\n]*\)", "]", text)
     text = re.sub(r"(?m)^:::.*$", "", text)
     text = re.sub(r"\{:?\s*[.#][^}\n]*\}", "", text)                         # attribute lists { .class }
+    text = re.sub(r"(?m)^\s*(!!!|\?\?\?\+?) .*$", "", text)                     # admonition markers
     return text
 
 

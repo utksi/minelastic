@@ -35,13 +35,19 @@ The how-to pages show each quantity with an ASE calculator:
 | Born charges, piezoelectric e and d | alpha-quartz, BKS rigid-ion model (`examples/bks_quartz_piezo.py`) | [Piezoelectricity](../how-to/piezoelectricity.md#with-an-ase-calculator) |
 | finite temperature | fcc Al, EMT molecular dynamics (`examples/emt_finite_temperature.py`) | [Finite temperature](../how-to/finite-temperature.md#with-an-ase-calculator) |
 
-Relax the reference cell with the same calculator first: the textbook constants refer to a stress-free
-reference.
+!!! tip
+
+    Relax the reference cell with the same calculator first: the textbook constants refer to a stress-free
+    reference.
 
 ## Machine-learned potentials
 
-Any ASE calculator works. Relax the reference cell with the same calculator, and use double precision: the
-stresses of the strained cells differ by only about 1 GPa.
+Any ASE calculator works.
+
+!!! tip "Double precision"
+
+    Run machine-learned potentials in double precision: the stresses of the strained cells differ by only
+    about 1 GPa.
 
 <!-- skip: needs MACE -->
 ```python

@@ -22,8 +22,11 @@ The protocol has three steps:
 The stress fluctuations scale as $1/\sqrt{N}$ with the number of atoms. A larger supercell, a longer run or
 a larger strain step (within the linear regime) reduce the error. MD inputs use two points per pattern,
 $\pm\delta$, because the four-point formula amplifies the noise of the averages: at equal total MD time its
-result is about twice as noisy. For metals, use an electronic smearing that matches the temperature (VASP
-`ISMEAR = -1` with `SIGMA` = $k_B T$).
+result is about twice as noisy.
+
+!!! tip "Metals"
+
+    Use an electronic smearing that matches the temperature, in VASP `ISMEAR = -1` with `SIGMA` = $k_B T$.
 
 ## With an ASE calculator
 
@@ -56,8 +59,11 @@ c12        32.9     31.5 +- 0.5  GPa
 c44        36.2     30.3 +- 0.4  GPa
 ```
 
-The run takes about 3 minutes on one core. EMT is a toy potential for Al, so only the workflow carries over,
-not the numbers.
+The run takes a few minutes on one core.
+
+!!! note
+
+    EMT is a toy potential for Al: only the workflow carries over, not the numbers.
 
 ## With VASP or Quantum ESPRESSO
 
@@ -79,11 +85,14 @@ minelastic collect el_600K --md --skip 1000 --kinetic-temperature 600
 ```
 
 `--skip` discards the equilibration steps. VASP and pw.x print the stress without its kinetic part, and
-`--kinetic-temperature` adds it ($n k_B T$ in $C_{11}$, $C_{12}$, ..., about 0.25 GPa for Al at 300 K). The
-standard errors assume uncorrelated steps, so thin or block-average the trajectory if you need reliable
-error bars. For pw.x, the template has `calculation = 'md'` with a thermostat in `&IONS` and a fixed cell,
+`--kinetic-temperature` adds it ($n k_B T$ in $C_{11}$, $C_{12}$, ..., about 0.25 GPa for Al at 300 K). For pw.x, the template has `calculation = 'md'` with a thermostat in `&IONS` and a fixed cell,
 and the rest is the same. minelastic refuses to collect MD runs without `--md` (or `--samples`), so that
 the last step is never taken by mistake.
+
+!!! note "Error bars"
+
+    The standard errors assume uncorrelated steps. Thin or block-average the trajectory if you need reliable
+    error bars.
 
 A cheaper route runs the MD with a machine-learned force field and computes accurate single points on
 selected snapshots, in sub-directories `conf-*` of each strain state. Collect them with

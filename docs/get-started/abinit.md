@@ -50,10 +50,22 @@ Direct
    0.6666666666666667  0.3333333333333334  0.8817999999999998  N
 ```
 
-The pseudopotentials are the PBE standard set of PseudoDojo v0.4. Every calculation runs in a directory of
-its own, so set `pp_dirpath` to the absolute path of the directory with `Al.psp8` and `N.psp8`. The elastic
-constants are differences of stresses of a few GPa, so the cutoff and the convergence threshold are tighter
-than for a total-energy calculation.
+The pseudopotentials are the PBE standard set of PseudoDojo v0.4, and the cutoff and the convergence
+threshold are tight.
+
+!!! note "Pseudopotential path"
+
+    Every calculation runs in a directory of its own, so set `pp_dirpath` to the absolute path of the
+    directory with `Al.psp8` and `N.psp8`.
+
+!!! info "Convergence"
+
+    Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
+    cutoff, the k-point mesh, the smearing and the convergence threshold than total energies are. The settings here are chosen to show the workflow; they are not the
+    result of a convergence study. Before using the constants in a publication, check that they change by
+    less than the accuracy you need when the cutoff (`ecut`) is raised and the k-point mesh (`ngkpt`) refined, and relax the reference structure with the final
+    settings.
+
 
 ## 2. Look at the strain set
 
@@ -83,9 +95,12 @@ stretches it along z. The entry `s1 = 1 c11` means that the first stress compone
 $\sigma_{xx}$, equals $c_{11}$ times the strain. Every constant appears alone in at least one stress
 component, so each is read off directly.
 
-Each pattern is applied at the strains $-0.01$ and $+0.01$ (multipliers -1 and 1 of the step). By default
-minelastic also uses $\pm 0.02$, which makes the numerical derivative more accurate but doubles the number of
-calculations. `--stencil central` keeps the cheaper two-point derivative for this first run.
+!!! note "Two points per strain"
+
+    By default minelastic applies each pattern at $\pm 0.01$ and $\pm 0.02$, which makes the numerical
+    derivative more accurate but doubles the number of calculations. For this first run, `--stencil central`
+    keeps only $\pm 0.01$ (the multipliers -1 and 1 in the output above).
+
 
 ## 3. Write the inputs
 

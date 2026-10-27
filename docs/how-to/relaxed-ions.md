@@ -10,8 +10,12 @@ $$
 
 lowered by the relaxation of the atoms. Here $\Lambda$ is the internal-strain tensor (force on each atom
 per unit strain), $\Phi$ the $\Gamma$-point force constants and $\Omega$ the cell volume
-([theory](../theory/relaxed-ions.md)). If every atom sits at a centre of inversion, as in fcc, bcc,
-rocksalt or cubic perovskites, nothing relaxes and $C = C^0$.
+([theory](../theory/relaxed-ions.md)).
+
+!!! info
+
+    If every atom sits at a centre of inversion, as in fcc, bcc, rocksalt or cubic perovskites, nothing
+    relaxes and $C = C^0$.
 
 minelastic computes $C$ in two ways:
 
