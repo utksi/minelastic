@@ -4,7 +4,7 @@ site_url: https://utksi.github.io/minelastic/
 repo_url: https://github.com/utksi/minelastic
 repo_name: utksi/minelastic
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2026 Utkarsh Singh
+copyright: Copyright &copy; 2026 Utkarsh Singh and Sergei I. Simak
 
 theme:
   name: material
