@@ -31,7 +31,7 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/utksi/minelastic"
-Documentation = "https://utksi.github.io/minelastic/"
+Documentation = "https://utkarsh.science/minelastic/"
 Source = "https://github.com/utksi/minelastic"
 Issues = "https://github.com/utksi/minelastic/issues"
 Paper = "https://arxiv.org/abs/2610.11733"

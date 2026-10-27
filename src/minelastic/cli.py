@@ -34,7 +34,7 @@ def _common(p):
 def main(argv=None):
     """Parse the command line and run the subcommand; returns the exit status 0."""
     ap = argparse.ArgumentParser(
-        prog="minelastic", epilog="Documentation: https://utksi.github.io/minelastic/",
+        prog="minelastic", epilog="Documentation: https://utkarsh.science/minelastic/",
         description="Elastic constants from the minimal uncoupled stress-strain sets. info shows the symmetry and "
                     "the strain set of a structure, generate writes the inputs of the strained cells, collect reads "
                     "the finished calculations and prints the elastic tensor, and vasp-tensor analyses the tensor "
