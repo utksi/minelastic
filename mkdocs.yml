@@ -1,6 +1,6 @@
 site_name: minelastic
 site_description: Elastic, internal-strain and piezoelectric tensors from the fewest possible stress calculations, for any crystal symmetry and any DFT code
-site_url: https://utkarsh.science/minelastic/
+site_url: https://utksi.github.io/minelastic/
 repo_url: https://github.com/utksi/minelastic
 repo_name: utksi/minelastic
 edit_uri: edit/main/docs/

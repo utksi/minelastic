@@ -6,7 +6,7 @@ version: 0.1.0
 date-released: "2026-10-22"
 license: MIT
 repository-code: "https://github.com/utksi/minelastic"
-url: "https://utkarsh.science/minelastic/"
+url: "https://utksi.github.io/minelastic/"
 keywords:
   - elastic constants
   - stress-strain

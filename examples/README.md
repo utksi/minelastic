@@ -20,4 +20,4 @@ Templates for DFT codes (wurtzite AlN, PBE):
 | `qe_aln/` | Quantum ESPRESSO | pslibrary 1.0.0 PAW potentials; set `pseudo_dir` to an absolute path |
 | `abinit_aln/` | ABINIT | PseudoDojo v0.4 norm-conserving potentials; set `pp_dirpath` |
 
-The documentation walks through them with the full output: https://utkarsh.science/minelastic/
+The documentation walks through them with the full output: https://utksi.github.io/minelastic/

@@ -5,7 +5,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2610.11733-b31b1b.svg)](https://arxiv.org/abs/2610.11733)
 [![tests](https://github.com/utksi/minelastic/actions/workflows/tests.yml/badge.svg)](https://github.com/utksi/minelastic/actions/workflows/tests.yml)
-[![docs](https://img.shields.io/badge/docs-online-blue.svg)](https://utkarsh.science/minelastic/)
+[![docs](https://img.shields.io/badge/docs-online-blue.svg)](https://utksi.github.io/minelastic/)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 Elastic, internal-strain and piezoelectric tensors from the fewest possible stress calculations, for every
@@ -80,7 +80,7 @@ ASE calculator (EMT, MACE, CP2K, ...) can be used directly.
 
 ## Documentation
 
-The documentation at https://utkarsh.science/minelastic/ contains tutorials for VASP, Quantum ESPRESSO,
+The documentation at https://utksi.github.io/minelastic/ contains tutorials for VASP, Quantum ESPRESSO,
 ABINIT and CP2K, how-to guides for every quantity, the theory with all formulas, and the validation against
 the codes' own elastic, internal-strain, Born-charge and piezoelectric tensors. Runnable scripts are in
 [`examples/`](examples).
