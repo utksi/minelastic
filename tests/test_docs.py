@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Utkarsh Singh
-"""Executable documentation: the code blocks of docs/ and README.md are run and their printed output compared.
+"""Executable documentation: the code blocks of docs/, README.md and the agent skill (skills/) are run and their
+printed output compared.
 
 Every fenced code block (except BibTeX) carries a marker, an HTML comment on the line before it:
 
@@ -43,8 +44,10 @@ from minelastic import cli
 from minelastic.io import abinit, qe, vasp
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SKILL = sorted(os.path.relpath(os.path.join(d, f), ROOT) for d, _, fs in os.walk(os.path.join(ROOT, "skills"))
+               for f in fs if f.endswith(".md"))
 PAGES = sorted(os.path.relpath(os.path.join(d, f), ROOT) for d, _, fs in os.walk(os.path.join(ROOT, "docs"))
-               for f in fs if f.endswith(".md")) + ["README.md"]
+               for f in fs if f.endswith(".md")) + ["README.md"] + SKILL
 SLOW = {"examples/emt_finite_temperature.py", "examples/bks_quartz_piezo.py"}
 DFT_RUN = re.compile(r"\b(mpirun|srun|sbatch|vasp_std|pw\.x|abinit|aims\.x)\b")
 FENCE = re.compile(r"^(\s*)(```+|~~~+)\s*([\w+-]*)\s*$")
@@ -290,3 +293,17 @@ def test_page(page, tmp_path, monkeypatch):
             with open(os.path.join(ROOT, arg)) as f:
                 msg = compare(body, f.read())
             assert msg is None, f"{where}: differs from {arg}\n{msg}"
+
+
+def test_skill_options():
+    """Every --option that the agent skill names (outside #SBATCH lines) is an option of a minelastic subcommand."""
+    known = set()
+    for sub in ("info", "generate", "collect", "vasp-tensor"):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out), pytest.raises(SystemExit):
+            cli.main([sub, "--help"])
+        known |= set(re.findall(r"--[a-z][a-z-]*", out.getvalue()))
+    for page in SKILL:
+        text = "\n".join(ln for ln in open(os.path.join(ROOT, page)) if not ln.startswith("#SBATCH"))
+        named = set(re.findall(r"(?<![\w-])--[a-z][a-z-]*", text))
+        assert named <= known, f"{page}: not minelastic options: {sorted(named - known)}"

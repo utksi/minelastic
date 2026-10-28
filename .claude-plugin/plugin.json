@@ -1,0 +1,10 @@
+{
+  "name": "minelastic",
+  "version": "0.1.0",
+  "description": "Elastic, internal-strain and piezoelectric tensors from the fewest stress calculations, with minelastic and any DFT code or ASE calculator",
+  "author": {"name": "Utkarsh Singh"},
+  "homepage": "https://utksi.github.io/minelastic/",
+  "repository": "https://github.com/utksi/minelastic",
+  "license": "MIT",
+  "keywords": ["elastic-constants", "piezoelectricity", "dft", "vasp", "quantum-espresso", "ase"]
+}

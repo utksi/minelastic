@@ -1,0 +1,14 @@
+{
+  "name": "minelastic",
+  "description": "The minelastic agent skill: elastic constants, internal-strain and piezoelectric tensors with minelastic",
+  "owner": {
+    "name": "Utkarsh Singh"
+  },
+  "plugins": [
+    {
+      "name": "minelastic",
+      "source": "./",
+      "description": "Elastic, internal-strain and piezoelectric tensors from the fewest stress calculations, with minelastic and any DFT code or ASE calculator"
+    }
+  ]
+}

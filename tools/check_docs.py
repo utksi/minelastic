@@ -2,9 +2,9 @@
 # Copyright (c) 2026 Utkarsh Singh
 """Checks of the documentation text: typography, spelling, prose style and the separation of the tutorials.
 
-1. ASCII typography in docs/, README.md, examples/, src/, tests/ and tools/: no typographic dashes, minus
-   signs, ellipses, arrows, comparison or multiplication signs, curly quotes or Unicode super- and
-   subscripts. Letters with diacritics and Greek letters (Å, ö, α, β) are allowed.
+1. ASCII typography in docs/, README.md, AGENTS.md, examples/, skills/, src/, tests/ and tools/: no
+   typographic dashes, minus signs, ellipses, arrows, comparison or multiplication signs, curly quotes or
+   Unicode super- and subscripts. Letters with diacritics and Greek letters (Å, ö, α, β) are allowed.
 2. The tutorials (docs/get-started/) do not link into the theory pages, so that they can be followed without
    them.
 3. Spelling with codespell, with the intentional names of IGNORE.
@@ -19,7 +19,7 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEXT_DIRS = ["docs", "examples", "src", "tests", "tools"]
+TEXT_DIRS = ["docs", "examples", "skills", "src", "tests", "tools"]
 FORBIDDEN = re.compile("[\u2010-\u2015\u2026\u2190-\u21ff\u2212\u2264\u2265\u00d7\u2018\u2019\u201c\u201d"
                        "\u00b2\u00b3\u00b9\u2070-\u209f]")
 # the scheme name asess (all six single strains), the constant EQUIL, the CP2K keyword OT and VASP's spelling
@@ -29,8 +29,9 @@ PROSELINT_OFF = ["typography.symbols"]
 
 
 def files(exts):
-    """Paths (relative to the repository) of the files with the given extensions in TEXT_DIRS and README.md."""
-    out = ["README.md"]
+    """Paths (relative to the repository) of the files with the given extensions in TEXT_DIRS, README.md and
+    AGENTS.md."""
+    out = ["README.md", "AGENTS.md"]
     for d in TEXT_DIRS:
         for base, _, names in os.walk(os.path.join(ROOT, d)):
             out += [os.path.relpath(os.path.join(base, n), ROOT) for n in names if n.endswith(exts)]
