@@ -5,7 +5,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2610.11733-b31b1b.svg)](https://arxiv.org/abs/2610.11733)
 [![tests](https://github.com/utksi/minelastic/actions/workflows/tests.yml/badge.svg)](https://github.com/utksi/minelastic/actions/workflows/tests.yml)
-[![docs](https://img.shields.io/badge/docs-online-blue.svg)](https://utksi.github.io/minelastic/)
+[![docs](https://img.shields.io/badge/docs-online-blue.svg)](https://utkarsh.science/minelastic/)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/utksi/minelastic/blob/main/LICENSE)
 
 Elastic, internal-strain and piezoelectric tensors from the fewest possible stress calculations, for every
