@@ -3,7 +3,7 @@ message: "If you use minelastic, please cite the paper below."
 title: "minelastic: elastic constants from minimal uncoupled stress-strain calculations"
 type: software
 version: 0.1.0
-date-released: "2026-10-22"
+date-released: "2026-10-28"
 license: MIT
 repository-code: "https://github.com/utksi/minelastic"
 url: "https://utksi.github.io/minelastic/"

@@ -5,7 +5,7 @@ and [ASE](https://wiki.fysik.dtu.dk/ase/), are installed with it:
 
 <!-- skip: installs the package -->
 ```bash
-pip install git+https://github.com/utksi/minelastic.git
+pip install minelastic
 ```
 
 The command-line tool is called `minelastic`. To check the installation:

@@ -1,19 +1,19 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/wordmark-dark.svg">
-  <img src="docs/assets/wordmark-light.svg" alt="minelastic" height="72">
+  <source media="(prefers-color-scheme: dark)" srcset="https://utksi.github.io/minelastic/assets/wordmark-dark.svg">
+  <img src="https://utksi.github.io/minelastic/assets/wordmark-light.svg" alt="minelastic" height="72">
 </picture>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2610.11733-b31b1b.svg)](https://arxiv.org/abs/2610.11733)
 [![tests](https://github.com/utksi/minelastic/actions/workflows/tests.yml/badge.svg)](https://github.com/utksi/minelastic/actions/workflows/tests.yml)
 [![docs](https://img.shields.io/badge/docs-online-blue.svg)](https://utksi.github.io/minelastic/)
-[![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/utksi/minelastic/blob/main/LICENSE)
 
 Elastic, internal-strain and piezoelectric tensors from the fewest possible stress calculations, for every
 crystal symmetry and with any electronic-structure code.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/hero-dark.svg">
-  <img src="docs/assets/hero-light.svg" alt="The usual approach applies six strain patterns; minelastic applies one to a cubic crystal and reads c11, c12 and c44 from the stress components of the strained cell. Below, the number of strain patterns for each crystal system.">
+  <source media="(prefers-color-scheme: dark)" srcset="https://utksi.github.io/minelastic/assets/hero-dark.svg">
+  <img src="https://utksi.github.io/minelastic/assets/hero-light.svg" alt="The usual approach applies six strain patterns; minelastic applies one to a cubic crystal and reads c11, c12 and c44 from the stress components of the strained cell. Below, the number of strain patterns for each crystal system.">
 </picture>
 
 **minelastic** implements the minimal and uncoupled strain sets scheme of
@@ -33,7 +33,7 @@ constants at finite temperature.
 
 <!-- skip: installs the package -->
 ```bash
-pip install git+https://github.com/utksi/minelastic.git
+pip install minelastic
 ```
 
 minelastic requires Python 3.9 or newer; numpy, spglib and ASE are installed with it.
@@ -83,11 +83,11 @@ ASE calculator (EMT, MACE, CP2K, ...) can be used directly.
 The documentation at https://utksi.github.io/minelastic/ contains tutorials for VASP, Quantum ESPRESSO,
 ABINIT and CP2K, how-to guides for every quantity, the theory with all formulas, and the validation against
 the codes' own elastic, internal-strain, Born-charge and piezoelectric tensors. Runnable scripts are in
-[`examples/`](examples).
+[`examples/`](https://github.com/utksi/minelastic/tree/main/examples).
 
 ## Usage with agentic workflows
 
-An AI coding agent can run minelastic for you. [`skills/minelastic`](skills/minelastic) is an agent skill
+An AI coding agent can run minelastic for you. [`skills/minelastic`](https://github.com/utksi/minelastic/tree/main/skills/minelastic) is an agent skill
 with the commands and the checks that a correct calculation needs. In Claude Code:
 
 <!-- skip: Claude Code commands -->
@@ -96,7 +96,7 @@ with the commands and the checks that a correct calculation needs. In Claude Cod
 /plugin install minelastic@minelastic
 ```
 
-Other agents can read [`skills/minelastic/SKILL.md`](skills/minelastic/SKILL.md) directly. Examples are in
+Other agents can read [`skills/minelastic/SKILL.md`](https://github.com/utksi/minelastic/blob/main/skills/minelastic/SKILL.md) directly. Examples are in
 the [documentation](https://utksi.github.io/minelastic/how-to/agentic-workflows/).
 
 ## Citing
@@ -122,6 +122,6 @@ If you use minelastic in published work, please cite the paper:
 among them the paper's benchmark runs for all nine elastic types, and they run every code example of the
 documentation, so no DFT code is needed.
 
-minelastic is distributed under the MIT license ([LICENSE](LICENSE)). It was developed at the Department of
+minelastic is distributed under the MIT license ([LICENSE](https://github.com/utksi/minelastic/blob/main/LICENSE)). It was developed at the Department of
 Physics, Chemistry and Biology (IFM), Linköping University. Questions and bug reports are welcome as GitHub
 issues.

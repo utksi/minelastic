@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (2026-10-22)
+## 0.1.0 (2026-10-28)
 
 First public release, accompanying S. I. Simak and U. Singh, arXiv:2610.11733.
 
