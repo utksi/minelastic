@@ -107,8 +107,8 @@ nav:
           - Finite temperature: how-to/finite-temperature.md
           - Magnetic materials: how-to/magnetic.md
           - Your own workflow: how-to/own-workflow.md
+          - Usage with agentic workflows: how-to/agentic-workflows.md
           - Troubleshooting: how-to/troubleshooting.md
-          - AI coding agents: how-to/agents.md
       - Codes:
           - ASE calculators: codes/ase.md
           - VASP: codes/vasp.md

@@ -85,10 +85,10 @@ ABINIT and CP2K, how-to guides for every quantity, the theory with all formulas,
 the codes' own elastic, internal-strain, Born-charge and piezoelectric tensors. Runnable scripts are in
 [`examples/`](examples).
 
-## AI coding agents
+## Usage with agentic workflows
 
-[`skills/minelastic/`](skills/minelastic) is an agent skill that tells a coding agent how to use minelastic
-and what to check. In Claude Code:
+An AI coding agent can run minelastic for you. [`skills/minelastic`](skills/minelastic) is an agent skill
+with the commands and the checks that a correct calculation needs. In Claude Code:
 
 <!-- skip: Claude Code commands -->
 ```text
@@ -96,7 +96,8 @@ and what to check. In Claude Code:
 /plugin install minelastic@minelastic
 ```
 
-Other agents can read [`skills/minelastic/SKILL.md`](skills/minelastic/SKILL.md) directly.
+Other agents can read [`skills/minelastic/SKILL.md`](skills/minelastic/SKILL.md) directly. Examples are in
+the [documentation](https://utksi.github.io/minelastic/how-to/agentic-workflows/).
 
 ## Citing
 

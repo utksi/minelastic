@@ -76,6 +76,21 @@ such as EMT, MACE or CP2K, is used directly from Python. There are tutorials for
 [VASP](get-started/vasp.md), [Quantum ESPRESSO](get-started/qe.md), [ABINIT](get-started/abinit.md) and
 [CP2K](get-started/cp2k.md), with the output of real calculations.
 
+## Usage with agentic workflows
+
+An AI coding agent such as Claude Code can run minelastic for you. The repository includes an agent skill,
+[`skills/minelastic`](https://github.com/utksi/minelastic/tree/main/skills/minelastic), with the commands and
+the checks that a correct calculation needs. In Claude Code:
+
+<!-- skip: Claude Code commands -->
+```text
+/plugin marketplace add utksi/minelastic
+/plugin install minelastic@minelastic
+```
+
+Then ask in plain words, for example "compute the relaxed-ion elastic constants of this POSCAR with MACE".
+Other agents and more examples: [Usage with agentic workflows](how-to/agentic-workflows.md).
+
 ## How this documentation is organized
 
 If you are new to minelastic, start with the [installation](get-started/installation.md) and

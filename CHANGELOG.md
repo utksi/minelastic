@@ -25,4 +25,4 @@ First public release, accompanying S. I. Simak and U. Singh, arXiv:2610.11733.
 * Documentation with tutorials for ASE, VASP, Quantum ESPRESSO, ABINIT and CP2K (outputs of real runs),
   how-to guides per quantity and per code, the theory, and the API reference generated from the
   docstrings. The tests run every code block of the documentation and compare the printed output.
-* An agent skill for AI coding agents (`skills/minelastic/`), installable as a Claude Code plugin.
+* An agent skill for agentic workflows (`skills/minelastic/`), installable as a Claude Code plugin.

@@ -25,6 +25,10 @@ DejaVu Sans is used.
 
     python tools/make_figures.py    # writes docs/assets: hero-light.svg, hero-dark.svg, social-preview.png,
                                     # logo.svg, wordmark-light.svg, wordmark-dark.svg
+
+The icon of the Claude Code plugin is the symbol rendered with librsvg:
+
+    convert -background none -density 1536 docs/assets/logo.svg -resize 1024x1024 -depth 8 .claude-plugin/icon.png
 """
 import os
 
